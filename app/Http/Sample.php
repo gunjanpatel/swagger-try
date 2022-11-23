@@ -18,16 +18,17 @@ use OpenApi\Annotations as OA;
  *           type="string"
  *         ),
  *     ),
+ *     @OA\Parameter (
+ *         in="query",
+ *         name="timestamp",
+ *         description="Unix Timestamp",
+ *         @OA\Schema(ref="#/components/schemas/TimeStampType")
+ *     ),
  *     @OA\Response(
  *         response=200,
  *         description="Success",
- *         @OA\JsonContent(
- *              @OA\Property(
- *                  property="data",
- *                  type="array",
- *                  @OA\Items(ref="#/components/schemas/AppleTopChartsResultObject")
- *              )
- *          )
+ *         @OA\JsonContent(ref="#/components/schemas/ResponseResultObject"),
+ *         @OA\XmlContent(ref="#/components/schemas/ResponseResultObject")
  *     ),
  *     @OA\Response(
  *         response=404,
