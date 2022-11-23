@@ -6,5 +6,14 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/var/www/html/
+      - swagger-try-composer-cache:/root/.composer/cache/
+    networks:
+      - swagger-try-network
     ports:
       - 8011:80
+networks:
+  swagger-try-network:
+    driver: bridge
+volumes:
+  swagger-try-composer-cache:
+    driver: local
